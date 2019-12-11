@@ -7,23 +7,23 @@ public class PlayerChiSo : MonoBehaviour
 {
 
     [SerializeField]
-    private Image health_Stats, stamina_Stats;
+    private Image HP, MN;
 
-    public void Display_HealthStats(float healthValue)
+    public void Display_HealthStats(float value)
     {
 
-        healthValue /= 100f;
+        value /= 100f;
 
-        health_Stats.fillAmount = healthValue;
+        HP.fillAmount = value;
 
     }
 
-    public void Display_StaminaStats(float staminaValue)
+    public void Display_StaminaStats(float value)
     {
 
-        staminaValue /= 100f;
+        value /= 100f;
 
-        stamina_Stats.fillAmount = staminaValue;
+        MN.fillAmount = value;
 
     }
 

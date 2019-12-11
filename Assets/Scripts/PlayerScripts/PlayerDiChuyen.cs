@@ -24,10 +24,10 @@ public class PlayerDiChuyen : MonoBehaviour
 
     void Update()
     {
-        MoveThePlayer();
+        Move();
     }
 
-    void MoveThePlayer()
+    void Move()
     {
 
         move_Direction = new Vector3(Input.GetAxis(Axis.HORIZONTAL), 0f,
@@ -36,26 +36,25 @@ public class PlayerDiChuyen : MonoBehaviour
         move_Direction = transform.TransformDirection(move_Direction);
         move_Direction *= speed * Time.deltaTime;
 
-        ApplyAcceleration();
+        Acceleration();
 
         character_Controller.Move(move_Direction);
 
 
     } // move player
 
-    void ApplyAcceleration()
+    void Acceleration()
     {
 
         vertical_Velocity -= acceleration * Time.deltaTime;
 
-        // jump
-        PlayerJump();
+        Jump();
 
         move_Direction.y = vertical_Velocity * Time.deltaTime;
 
     } // apply acceleration
 
-    void PlayerJump()
+    void Jump()
     {
 
         if (character_Controller.isGrounded && Input.GetKeyDown(KeyCode.Space))

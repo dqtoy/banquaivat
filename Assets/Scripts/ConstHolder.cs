@@ -9,6 +9,7 @@ public class Axis
     public const string VERTICAL = "Vertical";
 }
 
+
 public class MouseAxis
 {
     public const string MOUSE_X = "Mouse X";
@@ -45,7 +46,6 @@ public class Tags
     public const string ENEMY_TAG = "Enemy";
 
 }
-
 
 
 
