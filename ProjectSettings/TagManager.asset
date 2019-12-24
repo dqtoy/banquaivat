@@ -10,6 +10,7 @@ TagManager:
   - FP Camera
   - Arrow
   - Enemy
+  - Egg
   layers:
   - Default
   - TransparentFX

@@ -7,6 +7,10 @@ public class WeaponManager : MonoBehaviour
 
     [SerializeField]
     private WeaponHandler[] weapons;
+    public bool alpha1 = true;
+    public bool alpha2 = true;
+    public bool alpha3 = true;
+    public bool alpha4 = true;
 
     private int current_Weapon_Index;
 
@@ -23,22 +27,28 @@ public class WeaponManager : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
-            TurnOnSelectedWeapon(0);
+            if (alpha1)
+                TurnOnSelectedWeapon(0);
         }
 
         if (Input.GetKeyDown(KeyCode.Alpha2))
         {
-            TurnOnSelectedWeapon(1);
+            if (alpha2)
+                TurnOnSelectedWeapon(1);
         }
 
         if (Input.GetKeyDown(KeyCode.Alpha3))
         {
-            TurnOnSelectedWeapon(2);
+
+            if (alpha3)
+                TurnOnSelectedWeapon(2);
         }
 
         if (Input.GetKeyDown(KeyCode.Alpha4))
         {
-            TurnOnSelectedWeapon(3);
+
+            if (alpha4)
+                TurnOnSelectedWeapon(3);
         }
 
    

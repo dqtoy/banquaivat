@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class PlayerChiSo : MonoBehaviour
@@ -11,6 +12,10 @@ public class PlayerChiSo : MonoBehaviour
 
     public void Display_HealthStats(float value)
     {
+        if (value < 0)
+        {
+            SceneManager.LoadScene("EndGame");
+        }
 
         value /= 100f;
 
@@ -24,6 +29,7 @@ public class PlayerChiSo : MonoBehaviour
         value /= 100f;
 
         MN.fillAmount = value;
+
 
     }
 

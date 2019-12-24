@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerTanCong : MonoBehaviour
 {
@@ -18,7 +19,7 @@ public class PlayerTanCong : MonoBehaviour
 
     private bool is_Aiming;
 
-
+    private int time = 0;
 
     void Awake()
     {
@@ -117,11 +118,23 @@ public class PlayerTanCong : MonoBehaviour
         if (Physics.Raycast(mainCam.transform.position, mainCam.transform.forward, out hit))
         {
             print("hit: " + hit.transform.gameObject.name);
+
             if (hit.transform.tag == Tags.ENEMY_TAG)
             {
+                weapon_Manager.alpha4 = false;
+                
+                hit.transform.gameObject.GetComponent<MauScript>().ApplyDamage(damage);
+                //hit.transform.gameObject.SetActive(false);
                 //hit.transform.GetComponent<HealthScript>().ApplyDamage(damage);
-            }
 
+            }
+            if (hit.transform.tag == Tags.EGG)
+            {
+                Debug.Log("hit the Egg");
+                time = time + 1;
+                if (time > 10)
+                    SceneManager.LoadScene("Level02");
+            }
         }
 
     } // bullet fired

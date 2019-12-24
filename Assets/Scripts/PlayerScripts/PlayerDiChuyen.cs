@@ -39,6 +39,7 @@ public class PlayerDiChuyen : MonoBehaviour
         Acceleration();
 
         character_Controller.Move(move_Direction);
+        
 
 
     } // move player

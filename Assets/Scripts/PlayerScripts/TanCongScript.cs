@@ -15,9 +15,8 @@ public class TanCongScript : MonoBehaviour
 
         if (hits.Length > 0)
         {
-
-            //hits[0].gameObject.GetComponent<HealthScript>().ApplyDamage(damage);
-
+            print("We touch: "+ hits[0].gameObject.tag);
+            hits[0].gameObject.GetComponent<MauScript>().ApplyDamage(damage);
             gameObject.SetActive(false);
 
         }
